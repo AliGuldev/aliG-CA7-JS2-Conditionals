@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="author" content="Ali Gul">
+  <title>Bear Hunter Ninja Game</title>   
+</head>
+<body>
+  <h1>Bear Hunter Ninja</h1>
+  <!-- This is where the result will be printed -->
+  <p id="result"></p>
+
+  <script>
+    //Welcoming the player and getting their name
+    let playersName = prompt("Welcome to Bear Hunter Ninja! Please enter your name to get started:");
+    
+    //Saying hi and getting the player excited
+    alert('Hi ' + playersName + '! Let\'s play!!');
+
+    //Prompting the player for their choice
+    let playersChoice = prompt(`Who are you: Bear, Ninja, or Hunter?`);
+
+    //Setting the computers choice which is bear
+    const computersChoice = "Bear";
+
+    //Telling the players choice
+    let choiceDescription;
+    switch (playersChoice) {
+      case "Bear":
+        choiceDescription = `${playersName} you chose Bear!`;
+        break;
+      case "Ninja":
+        choiceDescription = `${playersName} you chose Ninja!`;
+        break;
+      case "Hunter":
+        choiceDescription = `${playersName} you chose Hunter!`;
+        break;
+        default:
+          break;
+    }
+
+    //Telling the player the computers choice
+    let computersDescription = `The computer chose ${computersChoice}!`;
+
+    //Determining the winner
+    let winnerMessage;
+    if (playersChoice === "Bear" && computersChoice === "Bear") {
+      winnerMessage = "It's a tie!!";
+    } else if (playersChoice === "Bear" && computersChoice === "Ninja") {
+      winnerMessage = "You win!!";
+    } else if (playersChoice === "Bear" && computersChoice === "Hunter") {
+      winnerMessage = "The computer wins!";
+    } else if (playersChoice === "Ninja" && computersChoice === "Bear") {
+      winnerMessage = "The computer wins!";
+    } else if (playersChoice === "Ninja" && computersChoice === "Ninja") {
+      winnerMessage = "It's a tie!!";
+    } else if (playersChoice === "Ninja" && computersChoice === "Hunter") {
+      winnerMessage = "You win!!";
+    } else if (playersChoice === "Hunter" && computersChoice === "Bear") {
+      winnerMessage = "You win!!";
+    } else if (playersChoice === "Hunter" && computersChoice === "Ninja") {
+      winnerMessage = "The computer wins!";
+    } else if (playersChoice === "Hunter" && computersChoice === "Hunter") {
+      winnerMessage = "It's a tie!!";
+    } else {
+      winnerMessage = "Unable to determine a winner";
+    }
+
+    //Outputing the message to the console
+    console.log(choiceDescription + " " + computersDescription +" " + winnerMessage);
+    
+    //Outputing message to the page
+    document.getElementById("result").innerHTML = choiceDescription + " " + computersDescription +" " + winnerMessage;
+  </script>
+</body>
+</html>
